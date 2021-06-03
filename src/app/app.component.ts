@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'change-detection';
+  todos = [{ title: 'One' }, { title: 'Two' }];
+
+  add() {
+    this.todos = [...this.todos, { title: 'Three' }];
+  }
+
+
+  // items = [];
+  // items$ = new BehaviorSubject(this.items);
+  //
+  // add() {
+  //   this.items.push({ title: Math.random() })
+  //   this.items$.next(this.items);
+  // }
+
+
+  // config = {
+  //   position: 'top'
+  // };
+  // //
+  // onClick() {
+  //   this.config = {
+  //     position: 'bottom'
+  //   }
+  // }
+
+  // onClick() {
+  //   this.config.position = 'bottom';
+  // }
+
+
+
+  // onClick() {}
 }
